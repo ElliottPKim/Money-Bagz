@@ -2,6 +2,25 @@ aside {
     background-color: grey;
 }
 
-section {
+#matchUps {
     background-color: silver;
+}
+
+#odds {
+    background-color: aqua;
+}
+
+html, body {
+    height:100%;
+}
+
+/* #left_column {
+    width: 250px;
+    float: left;
+    height:100%;
+} */
+
+main {
+    height:100%;
+    width:100%;
 }
