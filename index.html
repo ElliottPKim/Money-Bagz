@@ -6,41 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"/>
     <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"/>
-    <title>Money-Baggz</title>
     <link rel="stylesheet" href="assets/style.css"/>
+    <title>Money-Baggz</title>
 </head>
+
 <body>
-    <header class = "">
-        <nav class="navbar navbar-dark bg-dark">
-            <p class="navbar-brand h1 mb-0 w-100 text-left">Money Bagz</p>
-            <p id="currentDay" class="lead"></p>
+    <!--navbar now displays time-->
+    <header class="">
+        <nav class="navbar navbar-dark bg-dark mb-0 w-100">
+            <p class="navbar-brand h1 text-center">Money Bagz</p>
+            <p id="currentDay" class="navbar-brand h1 text-center"></p>
         </nav>
     </header>
 
-    <main class = "row">
-        <aside class = "col-2">
+    <!--created columns to use within main-->
+    <main class="row">
+        <aside class="col-2">
             <ul>
                 <li>Football</li>
                 <li>Basketball</li>
             </ul>
         </aside>
 
-        <section class = "col-5">
+        <section id="matchUps" class="col-6">
             <ul>
                 <li>Football</li>
                 <li>Basketball</li>
             </ul>
         </section>
 
-        <section class = "col-4">
+        <section id="odds" class="col-4">
 
         </section>
     </main>
+    
+    <!--thoughts on what to add?-->
+    <footer>
 
+    </footer>
+
+    <!--jQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!--Moment-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script>src = "./assets/script.js" </script>
+    <!--script.js-->
+    <script src="./assets/script.js"></script>
     
 </body>
 </html>
