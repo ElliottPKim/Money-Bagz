@@ -2,6 +2,10 @@ aside {
     background-color: grey;
 }
 
-section {
+#matchUps {
     background-color: silver;
+}
+
+#odds {
+    background-color: aqua;
 }
