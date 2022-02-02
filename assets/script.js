@@ -4,16 +4,31 @@ $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
 //GET https://newsapi.org/v2/everything?q=keyword&apiKey=75aa420ce6ff42f5a637c8295a616561
 
 //odds API
-var settings = {
-    "url": "https://v3.football.api-sports.io/{endpoint}",
-    "method": "GET",
-    "timeout": 0,
-    "headers": {
-      "x-rapidapi-key": "XxXxXxXxXxXxXxXxXxXxXxXx",
-      "x-rapidapi-host": "v3.football.api-sports.io"
-    },
-  };
-  
-  $.ajax(settings).done(function (response) {
-    console.log(response);
-  });
+
+//grab API
+function grabOddsApiBasketball() {
+    fetch("https://v1.basketball.api-sports.io/statistics?season=2021-2022&team=145&league=12", {
+	    "method": "GET",
+	    "headers": {
+		    "x-rapidapi-host": "v1.basketball.api-sports.io",
+		    "x-rapidapi-key": "d7e04f9168ce8cf62486f917e33571fc"
+	    }
+    })
+    .then(function(response) {
+	    response.json();
+        console.log(response);
+    })
+    .then(function(data) {
+        grabOdds(data, team);       
+    })
+}
+
+function grabOdds(team) {
+
+    var basketball = document.createElement('div');
+    //basketball.textContent = 
+
+    $('#matchUps').append(basketball);
+}
+
+grabOddsApiBasketball();
