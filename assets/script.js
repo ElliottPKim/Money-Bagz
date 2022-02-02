@@ -7,28 +7,43 @@ $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
 
 //grab API
 function grabOddsApiBasketball() {
-    fetch("https://v1.basketball.api-sports.io/statistics?season=2021-2022&team=145&league=12", {
+    fetch("https://v1.basketball.api-sports.io/games?h2h=145-134", {
 	    "method": "GET",
 	    "headers": {
 		    "x-rapidapi-host": "v1.basketball.api-sports.io",
-		    "x-rapidapi-key": "d7e04f9168ce8cf62486f917e33571fc"
+		    "x-rapidapi-key": "46e87bccbba421563a6d9139daeba0cf"
 	    }
     })
     .then(function(response) {
-	    response.json();
-        console.log(response);
+	    response.json().then(function (data) {
+            console.log(data);
+
+            var basketball = document.createElement('div');
+            basketball.textContent = `this sport is in: ${data.response[3].league.name}`;
+
+            $('#matchUps').append(basketball);
+
+            // grabOdds(data);
+        });
     })
-    .then(function(data) {
-        grabOdds(data, team);       
-    })
+    .catch(function (err) {
+        console.log(err);
+    });
+        
 }
 
-function grabOdds(team) {
+// function grabOdds(response) {
 
-    var basketball = document.createElement('div');
-    //basketball.textContent = 
+//     var basketball = document.createElement('div');
+//     basketball.textContent = response.games.all;
 
-    $('#matchUps').append(basketball);
-}
+//     $('#matchUps').append(basketball);
+// }
 
 grabOddsApiBasketball();
+
+//on click basketball button
+
+$('#basketballBtn').on('click', function() {
+    
+})
