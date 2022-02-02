@@ -25,3 +25,14 @@ main {
     height:100%;
     width:100%;
 }
+
+.boxed {
+    width: 250px;
+    height: 150px;
+    padding: 50px;
+    border: 1px solid black ;
+    width: fit-content;
+    block-size: fit-content;
+    
+    
+}
