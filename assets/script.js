@@ -7,7 +7,7 @@ $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
 
 //grab API
 function grabOddsApiBasketball() {
-    fetch("https://v1.basketball.api-sports.io/games?h2h=145-134", {
+    fetch("https://v1.basketball.api-sports.io/games?id=145", {
 	    "method": "GET",
 	    "headers": {
 		    "x-rapidapi-host": "v1.basketball.api-sports.io",
@@ -19,7 +19,7 @@ function grabOddsApiBasketball() {
             console.log(data);
 
             var basketball = document.createElement('div');
-            basketball.textContent = `this sport is in: ${data.response[3].league.name}`;
+            basketball.textContent = `this sport is in: ${data.response[3]}`;
 
             $('#matchUps').append(basketball);
 
@@ -45,5 +45,5 @@ grabOddsApiBasketball();
 //on click basketball button
 
 $('#basketballBtn').on('click', function() {
-    
+    $('#basketballTeams').css('display', 'content');
 })
