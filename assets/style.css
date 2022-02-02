@@ -2,17 +2,32 @@ aside {
     background-color: grey;
 }
 
+.jumbotron {
+    background-image: url("images/hero.jpg");
+    background-size: 100%;
+    margin: auto !important;
+    width: 100%;
+    height: 50%;
+}
+
+.title {
+    color: white;
+}
+#currentDay {
+    color: white;
+}
+
 #matchUps {
     background-color: silver;
 }
 
 #odds {
-    background-color: aqua;
+    background-color: #00ffff;
 
 }
 
 html, body {
-    height:100%;
+    height: 100%;
 }
 
 /* #left_column {
@@ -22,8 +37,8 @@ html, body {
 } */
 
 main {
-    height:100%;
-    width:100%;
+    height: 100%;
+    width: 100%;
 }
 
 #basketballTeams {
