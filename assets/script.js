@@ -43,13 +43,16 @@ $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
 //grabOddsApiBasketball();
 
 //on click basketball button
+function toggleTeams() {
+    var basketballTeamsLi = document.getElementById('basketballTeams');
+    var displayBTeamsLi = basketballTeamsLi.style.display;
 
-$('#basketballBtn').on('click', function() {
-    
-    $('#basketballTeams').css('visibility', 'visible');
-    
-})
-
+    if (displayBTeamsLi !== 'block') {
+        basketballTeamsLi.style.display = 'block';
+    } else {
+        basketballTeamsLi.style.display = 'none';
+    }
+}
 //modals
 var openModal = document.getElementById('openModal');
 var closeSpan = document.getElementById('closeFirst');
