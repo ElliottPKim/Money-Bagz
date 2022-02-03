@@ -2,6 +2,7 @@ aside {
     background-color: grey;
 }
 
+/*jumbotron*/
 .jumbotron {
     background-image: url("images/hero.jpg");
     background-size: 100%;
@@ -11,12 +12,59 @@ aside {
 }
 
 .title {
-    color: white;
+    color: darkred;
+    background-color: darkseagreen;
+    padding-bottom: 10px;
 }
 #currentDay {
-    color: white;
+    color: darkred;
+    background-color: darkseagreen;
 }
 
+/*modals*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+#openModal {
+    display: block;
+}
+
+.modalContent {
+    background-color: white;
+    margin: auto;
+    margin-top: 25%;
+    padding: 20px;
+    border: 2px solid darkred;
+    width: 50%;
+}
+
+.close {
+    color: darkred;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: darkseagreen;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modalTextContent {
+    margin: 1em;
+}
 #matchUps {
     background-color: silver;
 }
@@ -42,5 +90,5 @@ main {
 }
 
 #basketballTeams {
-    display: none;
+    visibility: hidden;
 }
