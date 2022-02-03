@@ -40,10 +40,12 @@ $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
 //     $('#matchUps').append(basketball);
 // }
 
-grabOddsApiBasketball();
+//grabOddsApiBasketball();
 
 //on click basketball button
 
 $('#basketballBtn').on('click', function() {
-    $('#basketballTeams').css('display', 'content');
+    
+    $('#basketballTeams').css('visibility', 'visible');
+    
 })
