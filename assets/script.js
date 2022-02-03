@@ -49,3 +49,17 @@ $('#basketballBtn').on('click', function() {
     $('#basketballTeams').css('visibility', 'visible');
     
 })
+
+//modals
+var openModal = document.getElementById('openModal');
+var closeSpan = document.getElementsByClassName('close')[0];
+
+closeSpan.onclick = function() {
+    openModal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target == openModal) {
+        openModal.style.display = 'none';
+    }
+}
