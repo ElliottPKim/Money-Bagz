@@ -21,9 +21,17 @@
 
     <div id="openModal" class="modal">
         <div class="modalContent">
-            <span class="close">&times;</span>
+            <span class="close" id="closeFirst">&times;</span>
             <p class="modalTextContent">Welcome to the Money-Baggz website!</p>
             <p class="modalTextContent">Remember, gambling is illegal unless handled properly:)!</p>
+        </div>
+    </div>
+
+    <div id="responseModal" class="modal">
+        <div class="modalContent">
+            <span class="close" id="closeSecond">&times;</span>
+            <p class="modalTextContent">This team/feature will be added soon!</p>
+            <p class="modalTextContent">Our apologies!</p>
         </div>
     </div>
     <!--created columns to use within main-->
@@ -32,36 +40,36 @@
             <button id="basketballBtn">Basketball</button>
             <ul id="basketballTeams">
                 
-                <li>Boston Celtics</li>
-                <li>Brooklyn Nets</li>
-                <li>New York Knicks</li>
-                <li>Phildaelphia 76ers</li>
-                <li>Toronto Raptors</li>
-                <li>Denver Nuggets</li>
-                <li>Minnesota Timberwolves</li>
-                <li>Oklahoma City Thunder</li>
-                <li>Portland Trail Blazers</li>
-                <li>Utah Jazz</li>
-                <li>Chicao Bulls</li>
-                <li>Cleveland Cavaliers</li>
-                <li>Detroit Pistons</li>
-                <li>Indiana Pacers</li>
-                <li>Millwaukee Bucks</li>
-                <li>Golden State Warriors</li>
-                <li>LA Clippers</li>
-                <li>Los Angeles Lakers</li>
-                <li>Phoenix Suns</li>
-                <li>Sacramento Kings</li>
-                <li>Atlanta Hawks</li>
-                <li>Charalotte Hawks</li>
-                <li>Miami Heat</li>
-                <li>Orlando Magic</li>
-                <li>Washington Wizards</li>
-                <li>Dallas Mavericks</li>
-                <li>Houston Rockets</li>
-                <li>Memphis Grizzlies</li>
-                <li>New Orlean Pelicans</li>
-                <li>San Antonio Spurs</li>
+                <li class="notYet">Boston Celtics</li>
+                <li class="notYet">Brooklyn Nets</li>
+                <li class="notYet">New York Knicks</li>
+                <li class="notYet">Phildaelphia 76ers</li>
+                <li class="notYet">Toronto Raptors</li>
+                <li class="notYet">Denver Nuggets</li>
+                <li class="notYet">Minnesota Timberwolves</li>
+                <li class="notYet">Oklahoma City Thunder</li>
+                <li class="notYet">Portland Trail Blazers</li>
+                <li class="notYet">Utah Jazz</li>
+                <li class="notYet">Chicao Bulls</li>
+                <li class="notYet">Cleveland Cavaliers</li>
+                <li class="notYet">Detroit Pistons</li>
+                <li class="notYet">Indiana Pacers</li>
+                <li class="notYet">Millwaukee Bucks</li>
+                <li class="notYet">Golden State Warriors</li>
+                <li class="notYet">LA Clippers</li>
+                <li id="145">Los Angeles Lakers</li>
+                <li class="notYet">Phoenix Suns</li>
+                <li class="notYet">Sacramento Kings</li>
+                <li class="notYet">Atlanta Hawks</li>
+                <li class="notYet">Charalotte Hawks</li>
+                <li class="notYet">Miami Heat</li>
+                <li class="notYet">Orlando Magic</li>
+                <li class="notYet">Washington Wizards</li>
+                <li class="notYet">Dallas Mavericks</li>
+                <li class="notYet">Houston Rockets</li>
+                <li class="notYet">Memphis Grizzlies</li>
+                <li class="notYet">New Orlean Pelicans</li>
+                <li class="notYet">San Antonio Spurs</li>
 
             </ul>
         </aside>
@@ -79,16 +87,12 @@
     <footer>
 
     </footer>
-    <!--sports widget-->
-    <script
-        type="module"
-        src="https://widgets.api-sports.io/football/1.1.8/widget.js">
-    </script>
+   
     <!--jQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!--Moment-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-
+    <!--javaScript-->
     <script src="./assets/script.js"></script>
 
 </body>

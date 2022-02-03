@@ -52,14 +52,29 @@ $('#basketballBtn').on('click', function() {
 
 //modals
 var openModal = document.getElementById('openModal');
-var closeSpan = document.getElementsByClassName('close')[0];
+var closeSpan = document.getElementById('closeFirst');
+var closeSpan2 = document.getElementById('closeSecond');
+var responseModal = document.getElementById('responseModal');
+var accessResponseModal =document.getElementsByClassName('notYet');
+
+for(var i = 0; i < accessResponseModal.length; i++) {
+    accessResponseModal[i].onclick = function() {
+        responseModal.style.display = 'block';
+    }
+}
 
 closeSpan.onclick = function() {
     openModal.style.display = 'none';
 }
 
+closeSpan2.onclick = function() {
+    responseModal.style.display = 'none';
+}
+
 window.onclick = function(event) {
     if (event.target == openModal) {
         openModal.style.display = 'none';
+    } else if (event.target == responseModal) {
+        responseModal.style.display = 'none';
     }
 }
