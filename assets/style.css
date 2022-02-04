@@ -5,6 +5,7 @@ aside {
 .col-2 {
     padding-right: 0;
 }
+
 /*jumbotron*/
 .jumbotron {
     background-image: url("images/hero.jpg");
@@ -16,13 +17,14 @@ aside {
 }
 
 .title {
-    color: darkred;
+    color: rgb(255, 255, 255);
     /* background-color: darkseagreen; */
     padding-bottom: 10px;
     font-size: 65px;
 }
+
 #currentDay {
-    color: darkred;
+    color: white;
     /* background-color: darkseagreen; */
     font-size: 20px;
 }
@@ -38,8 +40,8 @@ aside {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0);
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 #openModal {
@@ -73,7 +75,7 @@ aside {
 }
 
 #matchUps {
-    background-color: silver;
+    background-color: rgb(197, 132, 95);
 }
 
 #odds {
@@ -89,11 +91,13 @@ main {
     height: 100%;
     width: 100%;
 }
+
 /*carousel*/
 
 .carousel-inner {
     height: 45vh;
 }
+
 /*buttons*/
 
 .btn-info {
@@ -104,16 +108,25 @@ main {
 
 .btn-info:hover {
     color: black;
-    background-color: orange;
+    background-color: rgb(255, 166, 0);
     border-color: none;
     transition-duration: 10ms;
 }
 
 .btn-info.focus, .btn-info:focus {
-    color: darkred;
-    background-color: orange;
+    color: black;
+    background-color: white;
     border-color: none;
     box-shadow: none;
+}
+
+#basketballBtn {
+    background-color: rgb(146, 102, 97);
+}
+
+#basketballBtn:hover {
+    background-color: rgb(197, 132, 95);
+    color: white;
 }
 
 /*lists of teams*/
@@ -128,12 +141,13 @@ main {
 }
 
 .list-group-item {
-    background-color: orange;
+    color: black;
+    background-color: white;
 }
 
 .list-group-item:hover {
-    background-color: darkseagreen;
-    color: darkred;
+    background-color: rgb(236, 244, 114);
+    color: black;
     cursor: pointer;
 }
 
