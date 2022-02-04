@@ -17,12 +17,14 @@ aside {
 
 .title {
     color: darkred;
-    background-color: darkseagreen;
+    /* background-color: darkseagreen; */
     padding-bottom: 10px;
+    font-size: 65px;
 }
 #currentDay {
     color: darkred;
-    background-color: darkseagreen;
+    /* background-color: darkseagreen; */
+    font-size: 20px;
 }
 
 /*modals*/
@@ -75,7 +77,7 @@ aside {
 }
 
 #odds {
-    background-color: #00ffff;
+    background-color: silver;
 
 }
 
@@ -133,4 +135,8 @@ main {
     background-color: darkseagreen;
     color: darkred;
     cursor: pointer;
+}
+
+#entry {
+    text-align: center;
 }
