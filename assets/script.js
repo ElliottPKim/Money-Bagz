@@ -6,31 +6,54 @@ $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
 //odds API
 
 //grab API
-// function grabOddsApiBasketball() {
-//     fetch("https://v1.basketball.api-sports.io/games?id=145", {
-// 	    "method": "GET",
-// 	    "headers": {
-// 		    "x-rapidapi-host": "v1.basketball.api-sports.io",
-// 		    "x-rapidapi-key": "46e87bccbba421563a6d9139daeba0cf"
-// 	    }
-//     })
-//     .then(function(response) {
-// 	    response.json().then(function (data) {
-//             console.log(data);
+function grabGamesApiBasketball() {
+    fetch("https://v1.basketball.api-sports.io/games?season=2021-2022&league=12&team=145", {
+	    "method": "GET",
+	    "headers": {
+		    "x-rapidapi-host": "v1.basketball.api-sports.io",
+		    "x-rapidapi-key": "46e87bccbba421563a6d9139daeba0cf"
+	    }
+    })
+    .then(function(response) {
+	    response.json().then(function (data) {
+            console.log(data);
 
-//             var basketball = document.createElement('div');
-//             basketball.textContent = `this sport is in: ${data.response[3]}`;
+            for(i = 0; i < data.response.length; i++) {
+                var gamesAway = data.response[i].teams.away.name;
+                var gamesHome = data.response[i].teams.home.name;
+                var scoresAway = data.response[i].scores.away.total;
+                var scoresHome = data.response[i].scores.home.total;
+                var basketballGamesDiv = document.createElement('div');
+                var basketballGamesLi = document.createElement('li');
 
-//             $('#matchUps').append(basketball);
+                // console.log(gamesAway);
+                // console.log(gamesHome);
+                // console.log(scoresAway);
+                // console.log(scoresHome);
+                
+                
+                var basketballGamesLi = document.createElement('li');
 
-//             // grabOdds(data);
-//         });
-//     })
-//     .catch(function (err) {
-//         console.log(err);
-//     });
+                $(basketballGamesLi[i]).text('Match-Ups- Home: ' + gamesHome + 'Away: ' + gamesAway)
+                basketballGamesLi.classList = 'list-group-item allGames'
+                
+                basketballGamesDiv.appendChild(basketballGamesLi);
+                
+                
+                
+
+            
+
+                $('#matchUps').append(basketballGamesDiv);
+
+            }
+        });
+    })
+    .catch(function (err) {
+        console.log(err);
+    });
         
-//}
+}
 
 // function grabOdds(response) {
 
@@ -40,7 +63,7 @@ $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
 //     $('#matchUps').append(basketball);
 // }
 
-//grabOddsApiBasketball();
+grabGamesApiBasketball();
 
 //on click basketball button
 function toggleTeams() {
