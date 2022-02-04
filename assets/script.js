@@ -26,16 +26,17 @@ function grabGamesApiBasketball() {
                 var basketballGamesDiv = document.createElement('div');
                 var basketballGamesLi = document.createElement('li');
 
-                // console.log(gamesAway);
-                // console.log(gamesHome);
-                // console.log(scoresAway);
-                // console.log(scoresHome);
+                console.log(gamesAway);
+                console.log(gamesHome);
+                console.log(scoresAway);
+                console.log(scoresHome);
                 
                 
                 var basketballGamesLi = document.createElement('li');
 
-                $(basketballGamesLi[i]).text('Match-Ups- Home: ' + gamesHome + 'Away: ' + gamesAway)
-                basketballGamesLi.classList = 'list-group-item allGames'
+                // $(basketballGamesLi[i]).text('Match-Ups- Home: ' + gamesHome + 'Away: ' + gamesAway)
+                basketballGamesLi.textContent = `Match-Ups- Home: ${gamesHome} Away: ${gamesAway}`;
+                basketballGamesLi.classList = 'list-group-item allGames';
                 
                 basketballGamesDiv.appendChild(basketballGamesLi);
                 
