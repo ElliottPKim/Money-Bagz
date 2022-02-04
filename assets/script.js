@@ -26,20 +26,32 @@ function grabGamesApiBasketball() {
                 var basketballGamesDiv = document.createElement('div');
                 var basketballGamesLi = document.createElement('li');
 
-                console.log(gamesAway);
-                console.log(gamesHome);
-                console.log(scoresAway);
-                console.log(scoresHome);
+                // console.log(gamesAway);
+                // console.log(gamesHome);
+                // console.log(scoresAway);
+                // console.log(scoresHome);
                 
                 
                 var basketballGamesLi = document.createElement('li');
+                
+                
+                
+               
 
+                //for(i = 0; i < data.response.length; i++) {
                 // $(basketballGamesLi[i]).text('Match-Ups- Home: ' + gamesHome + 'Away: ' + gamesAway)
-                basketballGamesLi.textContent = `Match-Ups- Home: ${gamesHome} Away: ${gamesAway}`;
-                basketballGamesLi.classList = 'list-group-item allGames';
+                
+                if (scoresHome === null) {
+                    basketballGamesLi.textContent = `H: ${gamesHome}--Score: TBA A: ${gamesAway}--Score: TBA`;
+                    basketballGamesLi.classList = 'list-group-item allGames';
+                } else {
+                    basketballGamesLi.textContent = `H: ${gamesHome}--Score: ${scoresHome} A: ${gamesAway}--Score: ${scoresAway}`;
+                    basketballGamesLi.classList = 'list-group-item allGames';
+                }
                 
                 basketballGamesDiv.appendChild(basketballGamesLi);
                 
+               
                 
                 
 
@@ -56,15 +68,12 @@ function grabGamesApiBasketball() {
         
 }
 
-// function grabOdds(response) {
+var lakerGames = document.getElementById('145');
 
-//     var basketball = document.createElement('div');
-//     basketball.textContent = response.games.all;
+lakerGames.onclick = function() {
+    grabGamesApiBasketball();
+}
 
-//     $('#matchUps').append(basketball);
-// }
-
-grabGamesApiBasketball();
 
 //on click basketball button
 function toggleTeams() {
