@@ -3,8 +3,14 @@ $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
 //news api string
 function getNews() {
     fetch("https://newsapi.org/v2/everything?q=football&apiKey=757848ada6434055b26bb2458d582979")
+    .then(function(response) {
+        response.json().then(function(data) {
+            console.log(data)
+        })
+    })
 }
 
+getNews();
 
 //odds API
 
