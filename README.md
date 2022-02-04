@@ -5,7 +5,7 @@ No betting or gambling features whatsoever have been implemented. This is purley
 
 ## Websites 
 
-https://github.com/ElliottPKim/Money-Bagz
+https://github.com/ElliottPKim/Money-Bagz <br>
 https://elliottpkim.github.io/Money-Bagz/
 
 ## Features
