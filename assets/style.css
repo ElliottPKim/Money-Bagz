@@ -51,10 +51,11 @@ aside {
 .modalContent {
     background-color: white;
     margin: auto;
-    margin-top: 25%;
+    margin-top: 15%;
     padding: 20px;
     border: 2px solid darkred;
     width: 50%;
+    align-content: center;
 }
 
 .close {
@@ -153,4 +154,5 @@ main {
 
 #entry {
     text-align: center;
+
 }
