@@ -156,3 +156,12 @@ main {
     text-align: center;
 
 }
+
+.pastGames:hover {
+    background-color: red;
+    
+}
+
+.futureGames:hover {
+    background-color: green;
+}
