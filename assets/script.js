@@ -2,9 +2,9 @@ $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
 
 //news api string
 function getNews() {
-    fetch()
+    fetch("https://newsapi.org/v2/everything?q=football&apiKey=757848ada6434055b26bb2458d582979")
 }
-//GET https://newsapi.org/v2/everything?q="football"&apiKey=757848ada6434055b26bb2458d582979
+
 
 //odds API
 
@@ -46,10 +46,10 @@ function grabGamesApiBasketball() {
                 
                 if (scoresHome === null) {
                     basketballGamesLi.textContent = `H: ${gamesHome}--Score: TBA A: ${gamesAway}--Score: TBA`;
-                    basketballGamesLi.classList = 'list-group-item allGames';
+                    basketballGamesLi.classList = 'list-group-item pastGames';
                 } else {
                     basketballGamesLi.textContent = `H: ${gamesHome}--Score: ${scoresHome} A: ${gamesAway}--Score: ${scoresAway}`;
-                    basketballGamesLi.classList = 'list-group-item allGames';
+                    basketballGamesLi.classList = 'list-group-item futureGames';
                 }
                 
                 basketballGamesDiv.appendChild(basketballGamesLi);
