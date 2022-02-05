@@ -157,11 +157,11 @@ main {
 
 }
 
-.pastGames:hover {
+.futureGames:hover {
     background-color: red;
     
 }
 
-.futureGames:hover {
+.pastGames:hover {
     background-color: green;
 }
