@@ -188,3 +188,20 @@ window.onclick = function(event) {
         responseModal.style.display = 'none';
     }
 }
+
+//local storage set
+var retrieveFav = localStorage.getItem('favoriteTeam');
+console.log(retrieveFav);
+
+if (retrieveFav !== null) {
+    var removeButton = document.createElement('button');
+    removeButton.textContent = 'Remove From Favorite';
+    removeButton.classList = 'btn btn-warning';
+    removeButton.onclick = function() {
+        localStorage.removeItem('favoriteTeam');
+        location.reload();
+    }
+
+    $('#matchUps').prepend(removeButton);
+    $('#myFavoriteTeam').text(`${retrieveFav} has been selected as your favorite team! Their next game is ${grabNextGame()}`);
+}
