@@ -91,38 +91,39 @@ function grabNextGame() {
 //151-145
 //odds?season=2021-2022&bookmaker=4&game=138026&league=12
 //games?h2h=145-151
-// function grabOdds() {
-//     fetch("https://v1.basketball.api-sports.io/odds?season=2021-2022&bookmaker=1&game=138013&league=12", {
-// 	    "method": "GET",
-// 	    "headers": {
-// 		    "x-rapidapi-host": "v1.basketball.api-sports.io",
-// 		    "x-rapidapi-key": "46e87bccbba421563a6d9139daeba0cf"
-// 	    }
-//     })
-//     .then(function(response) {
-// 	    response.json().then(function (data) {
-//             console.log(data);
+function grabOdds() {
+    fetch("https://v1.basketball.api-sports.io/odds?season=2021-2022&bookmaker=1&game=138013&league=12", {
+	    "method": "GET",
+	    "headers": {
+		    "x-rapidapi-host": "v1.basketball.api-sports.io",
+		    "x-rapidapi-key": "46e87bccbba421563a6d9139daeba0cf"
+	    }
+    })
+    .then(function(response) {
+	    response.json().then(function (data) {
+            console.log(data);
+            console.log(data.response[0].bookmakers[0]);
             
-//             for(i = 0; i < data.response.bookmakers.bets[i].values[i].length; i++) {
-//                 var odds = data.response.bookmakers.bets[i].values[i].odd;
-//                 var value = data.response.bookmakers.bets[i].values[i].value;
-//                 var createOddDiv = document.createElement('div');
-//                 var createOddLi = document.createElement('li');
+            for(i = 0; i < data.response[0].bookmakers[0].bets[0].values.length; i++) {
+                var odds = data.response[0].bookmakers[0].bets[0].values[i].odd;
+                var value = data.response[0].bookmakers[0].bets[0].values[i].value;
+                var createOddDiv = document.createElement('div');
+                var createOddLi = document.createElement('li');
 
-//                 createOddLi.textContent = `Odds are ${odds}| Over/Under = ${value}`;
+                createOddLi.textContent = `Odds are ${odds}| for ${value}`;
+                createOddLi.classList = 'list-group-item';
+                createOddDiv.appendChild(createOddLi);
 
-//                 createOddDiv.appendChild(createOddLi);
-
-//                 $('#odds').append(createOddDiv);
-//             }
-//         })
-//     })
-//     .catch(function (err) {
-//         console.log(err);
-//     })
+                $('#odds').append(createOddDiv);
+            }
+        })
+    })
+    .catch(function (err) {
+        console.log(err);
+    })
         
-// }
-// grabOdds();
+}
+
 
 var lakerGames = document.getElementById('145');
 
@@ -147,6 +148,7 @@ lakerGames.onclick = function() {
     }
 
     grabGamesApiBasketball();
+    grabOdds();
 }
 
 
@@ -205,4 +207,11 @@ if (retrieveFav !== null) {
 
     $('#matchUps').prepend(removeButton);
     $('#myFavoriteTeam').text(`${retrieveFav} has been selected as your favorite team! Their next game is: `, grabNextGame());
+}
+
+//return to home page
+var homeBtn = document.getElementById('home');
+
+homeBtn.onclick = function() {
+    location.reload();
 }
