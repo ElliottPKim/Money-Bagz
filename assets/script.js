@@ -61,9 +61,75 @@ function grabGamesApiBasketball() {
         
 }
 
+function grabNextGame() {
+    fetch("https://v1.basketball.api-sports.io/games?season=2021-2022&league=12&team=145", {
+	    "method": "GET",
+	    "headers": {
+		    "x-rapidapi-host": "v1.basketball.api-sports.io",
+		    "x-rapidapi-key": "46e87bccbba421563a6d9139daeba0cf"
+	    }
+    })
+    .then(function(response) {
+	    response.json().then(function (data) {
+            console.log(data);
+
+            var nextGameDiv = document.createElement('div');
+            var nextGameDate = document.createElement('span');
+            nextGameDate.textContent = `(${moment(data.response[59].date).format('LLLL')})`;
+
+            nextGameDiv.appendChild(nextGameDate);
+
+            $('#matchUps').append(nextGameDiv);
+        });
+    })
+    .catch(function (err) {
+        console.log(err);
+    });
+}
+
+//151-145
+//odds?season=2021-2022&bookmaker=4&game=138026&league=12
+//games?h2h=145-151
+// function grabOdds() {
+//     fetch("https://v1.basketball.api-sports.io/odds?season=2021-2022&bookmaker=1&game=138013&league=12", {
+// 	    "method": "GET",
+// 	    "headers": {
+// 		    "x-rapidapi-host": "v1.basketball.api-sports.io",
+// 		    "x-rapidapi-key": "46e87bccbba421563a6d9139daeba0cf"
+// 	    }
+//     })
+//     .then(function(response) {
+// 	    response.json().then(function (data) {
+//             console.log(data);
+            
+//             for(i = 0; i < data.response.bookmakers.bets[i].values[i].length; i++) {
+//                 var odds = data.response.bookmakers.bets[i].values[i].odd;
+//                 var value = data.response.bookmakers.bets[i].values[i].value;
+//                 var createOddDiv = document.createElement('div');
+//                 var createOddLi = document.createElement('li');
+
+//                 createOddLi.textContent = `Odds are ${odds}| Over/Under = ${value}`;
+
+//                 createOddDiv.appendChild(createOddLi);
+
+//                 $('#odds').append(createOddDiv);
+//             }
+//         })
+//     })
+//     .catch(function (err) {
+//         console.log(err);
+//     })
+        
+// }
+// grabOdds();
+
 var lakerGames = document.getElementById('145');
 
 lakerGames.onclick = function() {
+    //remove paragraph
+    $('#myFavoriteTeam').remove();
+
+    //create new button
     var createSave = document.createElement('button');
     createSave.textContent = 'Save As Favorite';
     createSave.classList = 'btn btn-warning';
@@ -122,6 +188,3 @@ window.onclick = function(event) {
         responseModal.style.display = 'none';
     }
 }
-
-
-
