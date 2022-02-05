@@ -123,3 +123,7 @@ window.onclick = function(event) {
         responseModal.style.display = 'none';
     }
 }
+
+var favoriteTeam = localStorage.setItem("user", JSON.stringify());
+console.log(favoriteTeam)
+
