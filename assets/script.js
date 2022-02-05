@@ -75,6 +75,7 @@ function grabNextGame() {
 
             var nextGameDiv = document.createElement('div');
             var nextGameDate = document.createElement('span');
+            nextGameDate.classList = 'list-group-item';
             nextGameDate.textContent = `(${moment(data.response[59].date).format('LLLL')})`;
 
             nextGameDiv.appendChild(nextGameDate);
@@ -203,5 +204,5 @@ if (retrieveFav !== null) {
     }
 
     $('#matchUps').prepend(removeButton);
-    $('#myFavoriteTeam').text(`${retrieveFav} has been selected as your favorite team! Their next game is ${grabNextGame()}`);
+    $('#myFavoriteTeam').text(`${retrieveFav} has been selected as your favorite team! Their next game is: `, grabNextGame());
 }
