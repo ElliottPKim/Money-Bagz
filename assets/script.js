@@ -40,16 +40,6 @@ function grabGamesApiBasketball() {
                 // console.log(scoresAway);
                 // console.log(scoresHome);
                 
-                
-                var basketballGamesLi = document.createElement('li');
-                
-                
-                
-               
-
-                //for(i = 0; i < data.response.length; i++) {
-                // $(basketballGamesLi[i]).text('Match-Ups- Home: ' + gamesHome + 'Away: ' + gamesAway)
-                
                 if (scoresHome === null) {
                     basketballGamesLi.textContent = `H: ${gamesHome}--Score: TBA A: ${gamesAway}--Score: TBA`;
                     basketballGamesLi.classList = 'list-group-item pastGames';
@@ -60,12 +50,6 @@ function grabGamesApiBasketball() {
                 
                 basketballGamesDiv.appendChild(basketballGamesLi);
                 
-               
-                
-                
-
-            
-
                 $('#matchUps').append(basketballGamesDiv);
 
             }
@@ -80,6 +64,21 @@ function grabGamesApiBasketball() {
 var lakerGames = document.getElementById('145');
 
 lakerGames.onclick = function() {
+    var createSave = document.createElement('button');
+    createSave.textContent = 'Save As Favorite';
+    createSave.classList = 'btn btn-warning';
+    createSave.setAttribute('id', 'favoriteTeamBtn');
+
+    $('#matchUps').append(createSave);
+
+    createSave.onclick = function() {
+        //local storage save
+        var favoriteTeam = $('#145').text();
+        localStorage.setItem('favoriteTeam', JSON.stringify(favoriteTeam));
+
+        console.log(favoriteTeam);
+    }
+
     grabGamesApiBasketball();
 }
 
@@ -124,6 +123,5 @@ window.onclick = function(event) {
     }
 }
 
-var favoriteTeam = localStorage.setItem("user", JSON.stringify());
-console.log(favoriteTeam)
+
 
