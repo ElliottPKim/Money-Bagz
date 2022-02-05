@@ -197,7 +197,7 @@ console.log(retrieveFav);
 if (retrieveFav !== null) {
     var removeButton = document.createElement('button');
     removeButton.textContent = 'Remove From Favorite';
-    removeButton.classList = 'btn btn-warning';
+    removeButton.classList = 'btn btn-warning removeBtn' ;
     removeButton.onclick = function() {
         localStorage.removeItem('favoriteTeam');
         location.reload();

@@ -130,6 +130,26 @@ main {
     color: white;
 }
 
+#favoriteTeamBtn {
+    background-color: rgb(146, 102, 97);
+    border-color: none;
+}
+
+#favoriteTeamBtn:hover {
+    background-color: rgb(197, 132, 95);
+    color: white;
+}
+
+.removeBtn {
+    background-color: rgb(146, 102, 97);
+    border-color: none;
+}
+
+.removeBtn:hover {
+    background-color: rgb(197, 132, 95);
+    color: white;
+}
+
 /*lists of teams*/
 
 #basketballTeams {
@@ -159,7 +179,7 @@ main {
 
 .futureGames:hover {
     background-color: red;
-    
+
 }
 
 .pastGames:hover {
