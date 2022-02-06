@@ -18,7 +18,7 @@
         <header>
             <h1 class="title">Money Baggz</h1>
             <p id="currentDay"></p>
-            <div id="currentNews"></div>
+            <div class="bg-light" id="currentNews"></div>
         </header>
     </div>
 
@@ -41,9 +41,8 @@
     <!--created columns to use within main-->
     <main class="row">
         <aside class="col-2">
-            <button onclick="toggleTeams()" class="btn btn-info btn-block" id="basketballBtn">Basketball</button>
+            <button onclick="toggleTeams()" class="btn btn-info btn-block basketballBtn">Basketball</button>
             <ul id="basketballTeams" class="list-group">
-
                 <li class="list-group-item" id='home'>Home</li>
                 <li class="notYet list-group-item">Boston Celtics</li>
                 <li class="notYet list-group-item">Brooklyn Nets</li>
@@ -75,8 +74,10 @@
                 <li class="notYet list-group-item">Memphis Grizzlies</li>
                 <li class="notYet list-group-item">New Orlean Pelicans</li>
                 <li class="notYet list-group-item">San Antonio Spurs</li>
-
             </ul>
+            <button class="btn btn-info btn-block notYet basketballBtn">Football</button>
+            <button class="btn btn-info btn-block notYet basketballBtn">Soccer</button>
+            <button class="btn btn-info btn-block notYet basketballBtn">Hockey</button>
         </aside>
 
         <section id="matchUps" class="col-6 card">

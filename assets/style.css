@@ -93,12 +93,6 @@ main {
     width: 100%;
 }
 
-/*carousel*/
-
-.carousel-inner {
-    height: 45vh;
-}
-
 /*buttons*/
 
 .btn-info {
@@ -121,11 +115,12 @@ main {
     box-shadow: none;
 }
 
-#basketballBtn {
+.basketballBtn {
     background-color: rgb(146, 102, 97);
+    margin-bottom: 10px;
 }
 
-#basketballBtn:hover {
+.basketballBtn:hover {
     background-color: rgb(197, 132, 95);
     color: white;
 }
@@ -157,11 +152,11 @@ main {
 
 }
 
-.futureGames:hover {
+.pastGames:hover {
     background-color: red;
     
 }
 
-.pastGames:hover {
+.futureGames:hover {
     background-color: green;
 }

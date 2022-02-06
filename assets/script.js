@@ -60,10 +60,10 @@ function grabGamesApiBasketball() {
                 
                 if (scoresHome === null) {
                     basketballGamesLi.textContent = `H: ${gamesHome}--Score: TBA A: ${gamesAway}--Score: TBA`;
-                    basketballGamesLi.classList = 'list-group-item pastGames';
+                    basketballGamesLi.classList = 'list-group-item futureGames';
                 } else {
                     basketballGamesLi.textContent = `H: ${gamesHome}--Score: ${scoresHome} A: ${gamesAway}--Score: ${scoresAway}`;
-                    basketballGamesLi.classList = 'list-group-item futureGames';
+                    basketballGamesLi.classList = 'list-group-item pastGames';
                 }
                 
                 basketballGamesDiv.appendChild(basketballGamesLi);
