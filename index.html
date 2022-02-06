@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+    <!--jumbotron-->
     <div class="jumbotron m-3">
         <header>
             <h1 class="title">Money Baggz</h1>
@@ -21,13 +21,12 @@
             <div class="card bg-warning" id="currentNews"></div>
         </header>
     </div>
-
+    <!--modals-->
     <div id="openModal" class="modal">
         <div class="modalContent">
             <span class="close" id="closeFirst">&times;</span>
             <p id="entry" class="modalTextContent">Welcome to the Money Baggz</p>
-            <p id="entry" class="modalTextContent">This Website is stricly used for educational purposes ONLY. No
-                betting <br> or any form of gambling is available on this site.</p>
+            <p id="entry" class="modalTextContent">This Website is stricly used for educational purposes ONLY. No betting or any form of gambling is available on this site.</p>
         </div>
     </div>
 
@@ -41,6 +40,7 @@
     <!--created columns to use within main-->
     <main class="row">
         <aside class="col-2">
+            <h5 class="card bg-warning">Sports and Teams</h5>
             <button onclick="toggleTeams()" class="btn btn-info btn-block basketballBtn">Basketball</button>
             <ul id="basketballTeams" class="list-group">
                 <li class="list-group-item" id='home'>Home</li>
@@ -80,7 +80,7 @@
             <button class="btn btn-info btn-block notYet basketballBtn">Hockey</button>
         </aside>
 
-        <section id="matchUps" class="col-6 card">
+        <section id="matchUps" class="col-6">
             <h5 id="myFavoriteTeam" class="card bg-warning">Pick your favorite team and the time for their next game will automatically show up here:)</h5>
         </section>
 

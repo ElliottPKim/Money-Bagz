@@ -9,9 +9,11 @@ function getNews() {
                 var newArticle = document.createElement('div');
                 var newH = document.createElement('h3');
                 var newP = document.createElement('p');
+
             if (data.status !== 'error') {
-                var title = data.response.articles[0].title;
-                var description = data.response.articles[0].description;
+                //grab most recent news article
+                var title = data.response[0].articles[0].title;
+                var description = data.response[0].articles[0].description;
 
                 newH.textContent = title;
                 newP.textContent = description;
@@ -114,11 +116,9 @@ function grabNextGame() {
     });
 }
 
-//151-145
-//odds?season=2021-2022&bookmaker=4&game=138026&league=12
-//games?h2h=145-151
+//must update before every game
 function grabOdds() {
-    fetch("https://v1.basketball.api-sports.io/odds?season=2021-2022&bookmaker=1&game=138013&league=12", {
+    fetch("https://v1.basketball.api-sports.io/odds?season=2021-2022&bookmaker=1&game=138026&league=12", {
 	    "method": "GET",
 	    "headers": {
 		    "x-rapidapi-host": "v1.basketball.api-sports.io",

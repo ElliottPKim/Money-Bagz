@@ -160,3 +160,10 @@ main {
 .futureGames:hover {
     background-color: green;
 }
+
+/*card*/
+
+.card {
+    padding: 20px;
+    margin-top: 10px;
+}
