@@ -1,16 +1,44 @@
 $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
 
 //news api string
-//function getNews() {
-//     fetch("https://newsapi.org/v2/everything?q=football&apiKey=757848ada6434055b26bb2458d582979")
-//     .then(function(response) {
-//         response.json().then(function(data) {
-//             console.log(data)
-//         })
-//     })
-// }
+function getNews() {
+    fetch("https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=75aa420ce6ff42f5a637c8295a616561")
+    .then(function(response) {
+        response.json().then(function(data) {
+            console.log(data)
+                var newArticle = document.createElement('div');
+                var newH = document.createElement('h3');
+                var newP = document.createElement('p');
 
-//getNews();
+            if (data.status !== 'error') {
+                //grab most recent news article
+                var title = data.response[0].articles[0].title;
+                var description = data.response[0].articles[0].description;
+
+                newH.textContent = title;
+                newP.textContent = description;
+
+                newArticle.appendChild(newH);
+                newArticle.appendChild(newP);
+
+                $('#currentNews').append(newArticle);
+            } else {
+                newH.textContent = 'Error';
+                newP.textContent = 'The news API is having a problem loading right now';
+
+                newArticle.appendChild(newH);
+                newArticle.appendChild(newP);
+
+                $('#currentNews').append(newArticle);
+            }
+        })
+    })
+    .catch(function(err) {
+        console.log(err);
+    })
+}
+
+getNews();
 
 //odds API
 
@@ -42,10 +70,10 @@ function grabGamesApiBasketball() {
                 
                 if (scoresHome === null) {
                     basketballGamesLi.textContent = `H: ${gamesHome}--Score: TBA A: ${gamesAway}--Score: TBA`;
-                    basketballGamesLi.classList = 'list-group-item pastGames';
+                    basketballGamesLi.classList = 'list-group-item futureGames';
                 } else {
                     basketballGamesLi.textContent = `H: ${gamesHome}--Score: ${scoresHome} A: ${gamesAway}--Score: ${scoresAway}`;
-                    basketballGamesLi.classList = 'list-group-item futureGames';
+                    basketballGamesLi.classList = 'list-group-item pastGames';
                 }
                 
                 basketballGamesDiv.appendChild(basketballGamesLi);
@@ -88,11 +116,9 @@ function grabNextGame() {
     });
 }
 
-//151-145
-//odds?season=2021-2022&bookmaker=4&game=138026&league=12
-//games?h2h=145-151
+//must update before every game
 function grabOdds() {
-    fetch("https://v1.basketball.api-sports.io/odds?season=2021-2022&bookmaker=1&game=138013&league=12", {
+    fetch("https://v1.basketball.api-sports.io/odds?season=2021-2022&bookmaker=1&game=138026&league=12", {
 	    "method": "GET",
 	    "headers": {
 		    "x-rapidapi-host": "v1.basketball.api-sports.io",
