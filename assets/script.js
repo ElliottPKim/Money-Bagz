@@ -11,8 +11,8 @@ function getNews() {
             var newArticle = document.createElement('div');
             var newH = document.createElement('header');
             var newP = document.createElement('p');
-            var title = data.response.article[0].title;
-            var description = data.response.article[0].description;
+            var title = data.response[0].article.title;
+            var description = data.response[0].article.description;
 
             newH.textContent = title;
             newP.textContent = description;
