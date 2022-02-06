@@ -6,21 +6,29 @@ function getNews() {
     .then(function(response) {
         response.json().then(function(data) {
             console.log(data)
+                var newArticle = document.createElement('div');
+                var newH = document.createElement('h3');
+                var newP = document.createElement('p');
+            if (data.status !== 'error') {
+                var title = data.response.articles[0].title;
+                var description = data.response.articles[0].description;
 
-            for (i = 0; i < data.response.articles.length; i++);
-            var newArticle = document.createElement('div');
-            var newH = document.createElement('header');
-            var newP = document.createElement('p');
-            var title = data.response[0].article.title;
-            var description = data.response[0].article.description;
+                newH.textContent = title;
+                newP.textContent = description;
 
-            newH.textContent = title;
-            newP.textContent = description;
+                newArticle.appendChild(newH);
+                newArticle.appendChild(newP);
 
-            newArticle.appendChild(newH);
-            newArticle.appendChild(newP);
+                $('#currentNews').append(newArticle);
+            } else {
+                newH.textContent = 'Error';
+                newP.textContent = 'The news API is having a problem loading right now';
 
-            $('#currentNews').append(newArticle);
+                newArticle.appendChild(newH);
+                newArticle.appendChild(newP);
+
+                $('#currentNews').append(newArticle);
+            }
         })
     })
     .catch(function(err) {
