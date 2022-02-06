@@ -23,13 +23,31 @@ function getNews() {
 
                 $('#currentNews').append(newArticle);
             } else {
-                newH.textContent = 'Error';
-                newP.textContent = 'The news API is having a problem loading right now';
+                //display chuck norris joke
+                fetch("https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random", {
+	                "method": "GET",
+	                "headers": {
+		                "accept": "application/json",
+		                "x-rapidapi-host": "matchilling-chuck-norris-jokes-v1.p.rapidapi.com",
+		                "x-rapidapi-key": "c25b4f541bmsh7206fea8a898998p18d7f2jsna5f869165bfe"
+	                }
+                })
+                .then(function(response) {
+	                response.json().then(function(data) {
+                        console.log(data.value);
 
-                newArticle.appendChild(newH);
-                newArticle.appendChild(newP);
+                        newH.textContent = 'If the news has an error, you will see a joke below:)';
+                        newP.textContent = data.value;
 
-                $('#currentNews').append(newArticle);
+                        newArticle.appendChild(newH);
+                        newArticle.appendChild(newP);
+
+                        $('#currentNews').append(newArticle);
+                    })
+                })
+                .catch(function(err) {
+	                console.error(err);
+                });
             }
         })
     })
@@ -40,7 +58,6 @@ function getNews() {
 
 getNews();
 
-//odds API
 
 //grab API
 function grabGamesApiBasketball() {
