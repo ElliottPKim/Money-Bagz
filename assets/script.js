@@ -1,16 +1,34 @@
 $("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
 
 //news api string
-//function getNews() {
-//     fetch("https://newsapi.org/v2/everything?q=football&apiKey=757848ada6434055b26bb2458d582979")
-//     .then(function(response) {
-//         response.json().then(function(data) {
-//             console.log(data)
-//         })
-//     })
-// }
+function getNews() {
+    fetch("https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=75aa420ce6ff42f5a637c8295a616561")
+    .then(function(response) {
+        response.json().then(function(data) {
+            console.log(data)
 
-//getNews();
+            for (i = 0; i < data.response.articles.length; i++);
+            var newArticle = document.createElement('div');
+            var newH = document.createElement('header');
+            var newP = document.createElement('p');
+            var title = data.response.article[0].title;
+            var description = data.response.article[0].description;
+
+            newH.textContent = title;
+            newP.textContent = description;
+
+            newArticle.appendChild(newH);
+            newArticle.appendChild(newP);
+
+            $('#currentNews').append(newArticle);
+        })
+    })
+    .catch(function(err) {
+        console.log(err);
+    })
+}
+
+getNews();
 
 //odds API
 
