@@ -37,7 +37,7 @@ https://elliottpkim.github.io/Money-Bagz/
 
 ## Credits
 
-https://github.com/aditore - Anthony Ditore
-https://github.com/ElliottPKim - Elliott Kim
-https://github.com/JonHB82 - Jon Burch
-https://github.com/Domrossa - Dominic Rossa
+https://github.com/aditore - Anthony Ditore<br>
+https://github.com/ElliottPKim - Elliott Kim<br>
+https://github.com/JonHB82 - Jon Burch<br>
+https://github.com/Domrossa - Dominic Rossa<br>
