@@ -4,11 +4,11 @@
 
 We as a group made a SportsBook website to be able to see matchups and odds for given sport/team.
 No betting or gambling features whatsoever have been implemented. This is purley information.
-This project shows a user recent matches and betting odds of their favorite sports team to allow them to have more realistic bets if they wish to place them on a seperate website.
-Things learned include:
-[ ] Utilizing server side API's to render information on a website
-[ ] Utilizing third party API's to allow for coding to reach a finished product sooner
-[ ] Securing better github knowledge to be able to work with people in the future 
+This project shows a user recent matches and betting odds of their favorite sports team to allow them to have more realistic bets if they wish to place them on a seperate website.<br>
+Things learned include:<br>
+[ ] Utilizing server side API's to render information on a website<br>
+[ ] Utilizing third party API's to allow for coding to reach a finished product sooner<br>
+[ ] Securing better github knowledge to be able to work with people in the future
 
 ## Usage
 
