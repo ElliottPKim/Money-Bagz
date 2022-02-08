@@ -21,7 +21,7 @@ After accessing a functiong sport and team the user will see all their games for
 A user can save a team as their favorite within local storage and the current time of their next game will be displayed after the page has been refreshed.
 A user can clear their local storage with a button to allow the home page to revert to normal.
 
-![moneyBaggzGif](assets\images\moneyBaggz.gif)
+![moneyBaggzGif](assets/images/moneyBaggz.gif)
 
 ## Websites 
 
