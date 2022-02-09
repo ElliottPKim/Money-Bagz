@@ -121,7 +121,8 @@ function grabNextGame() {
             var nextGameDiv = document.createElement('div');
             var nextGameDate = document.createElement('span');
             nextGameDate.classList = 'list-group-item';
-            nextGameDate.textContent = `(${moment(data.response[59].date).format('LLLL')})`;
+            //must be updated every game
+            nextGameDate.textContent = `(${moment(data.response[60].date).format('LLLL')})`;
 
             nextGameDiv.appendChild(nextGameDate);
 
